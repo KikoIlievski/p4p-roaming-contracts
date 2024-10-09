@@ -33,7 +33,7 @@ contract DataRoamingContract {
         require(hasDataAccess[msg.sender], "No active roaming");
 
         uint256 startTime = roamingStartTime[msg.sender];
-        require(block.timestamp >= startTime + 30 seconds, "Roaming period not over");
+        require(block.timestamp >= startTime + 1 days, "Roaming period not over");
 
         address mno = userMnoRelation[msg.sender];
         if (mno == address(0)) {
